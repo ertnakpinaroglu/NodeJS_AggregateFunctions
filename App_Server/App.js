@@ -79,9 +79,17 @@ require("../Route/RouteManager")(app);
 //         console.log(res);
 // });
 
-tryModel.find({},(err,res)=> {
-    console.log(res);
-}).sort({Title:-1});
+// tryModel.find({},(err,res)=> {
+//     console.log(res);
+// }).sort({Title:-1});
+
+tryModel.aggregate([{
+    $match: {
+        Title: "oylesine"
+    }
+}], (err, result) => {
+    console.log(result);
+});
 
 
 app.listen(8000, () => {
