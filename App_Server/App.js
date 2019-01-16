@@ -11,6 +11,12 @@ var path = require("path");
 //#region 1-) Enable Static Files
 app.use("/App_Server/public/assets",express.static(path.join(__dirname,"public/assets")));
 //#endregion
+
+//#region  2-) Definition jade,pug file
+app.set("view engine","pug");
+app.set("Views",path.join(__dirname,"../Views"));
+//#endregion
+
 app.listen(8000,()=>{
     console.log("Server is starting....");
 });
