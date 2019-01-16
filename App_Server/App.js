@@ -109,16 +109,38 @@ require("../Route/RouteManager")(app);
 //     }
 // })
 
+// tryModel.aggregate([
+//      {
+//          $project:{
+//              Title:true,
+//              Name:true
+//          }
+//      }
+// ],(err,result)=>{
+//     if (err) {
+//         console.log("Hatalı işlem yapıldı");
+//     }
+//     else{
+//         console.log(result);
+//     }
+// });
+
 tryModel.aggregate([
-     {
-         $project:{
-             Title:true,
-             Name:true
-         }
-     }
-],(err,result)=>{
+    {
+        $sort:{
+            Title:1
+        },
+        
+    },
+    {
+        $skip:1
+    },
+    {
+        $limit:3
+    }
+],(err,result)=> {
     if (err) {
-        console.log("Hatalı işlem yapıldı");
+        console.log("Hata oluştu!!!");
     }
     else{
         console.log(result);
