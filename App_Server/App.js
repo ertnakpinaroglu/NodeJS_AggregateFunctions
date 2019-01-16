@@ -83,14 +83,31 @@ require("../Route/RouteManager")(app);
 //     console.log(res);
 // }).sort({Title:-1});
 
-tryModel.aggregate([{
-    $match: {
-        Title: "oylesine"
-    }
-}], (err, result) => {
-    console.log(result);
-});
+// tryModel.aggregate([{
+//     $match: {
+//         Title: "oylesine"
+//     }
+// }], (err, result) => {
+//     console.log(result);
+// });
 
+
+tryModel.aggregate([
+    {
+        $group:{
+            _id:"$Category",
+            adet:{$sum:1}
+            
+        }
+    }
+],(err,result)=>{
+    if (err) {
+        console.log("İşlemde bir hata oluştu"+ err);
+    }
+    else{
+        console.log(result);
+    }
+})
 
 app.listen(8000, () => {
     console.log("Server is starting....");
