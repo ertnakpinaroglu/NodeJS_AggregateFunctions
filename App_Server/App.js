@@ -92,22 +92,38 @@ require("../Route/RouteManager")(app);
 // });
 
 
-tryModel.aggregate([
-    {
-        $group:{
-            _id:"$Category",
-            adet:{$sum:1}
+// tryModel.aggregate([
+//     {
+//         $group:{
+//             _id:"$Category",
+//             adet:{$sum:1}
             
-        }
-    }
+//         }
+//     }
+// ],(err,result)=>{
+//     if (err) {
+//         console.log("İşlemde bir hata oluştu"+ err);
+//     }
+//     else{
+//         console.log(result);
+//     }
+// })
+
+tryModel.aggregate([
+     {
+         $project:{
+             Title:true,
+             Name:true
+         }
+     }
 ],(err,result)=>{
     if (err) {
-        console.log("İşlemde bir hata oluştu"+ err);
+        console.log("Hatalı işlem yapıldı");
     }
     else{
         console.log(result);
     }
-})
+});
 
 app.listen(8000, () => {
     console.log("Server is starting....");
