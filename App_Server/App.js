@@ -17,6 +17,11 @@ app.set("view engine","pug");
 app.set("Views",path.join(__dirname,"../Views"));
 //#endregion
 
+//#region 3-) Connect to database
+var dbAccess = require("../DbAccess/DatabaseContext");
+
+//#endregion
+
 app.listen(8000,()=>{
     console.log("Server is starting....");
 });
