@@ -72,12 +72,16 @@ require("../Route/RouteManager")(app);
 //     }
 // });
 
-tryModel.findByIdAndRemove("5c3f380e44e9982b5cc41ffe", (err, res) => {
-    if (err) {
-        console.log("İşlem Hatalı");
-    } else
-        console.log(res);
-});
+// tryModel.findByIdAndRemove("5c3f380e44e9982b5cc41ffe", (err, res) => {
+//     if (err) {
+//         console.log("İşlem Hatalı");
+//     } else
+//         console.log(res);
+// });
+
+tryModel.find({},(err,res)=> {
+    console.log(res);
+}).sort({Title:-1});
 
 
 app.listen(8000, () => {
