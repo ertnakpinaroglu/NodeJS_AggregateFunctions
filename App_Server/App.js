@@ -23,17 +23,17 @@ var dbAccess = require("../DbAccess/DatabaseContext");
 
 //#endregion
 
-//#region  4-) Model Creator
-var newTrymodel = new tryModel({
-    Title: "oylesine",
-    Name: "ertan"
-});
-newTrymodel.save(function (err, data) {
-    if (err) {
-        console.log("Ekleme yapılırken hata oluştu");
-    }
-    console.log("Ekleme işlemi bşarılı");
-});
+// //#region  4-) Model Creator
+// var newTrymodel = new tryModel({
+//     Title: "oylesine",
+//     Name: "ertan"
+// });
+// newTrymodel.save(function (err, data) {
+//     if (err) {
+//         console.log("Ekleme yapılırken hata oluştu");
+//     }
+//     console.log("Ekleme işlemi bşarılı");
+// });
 //#endregion
 
 //#region 5-) Configure Route Manager 
