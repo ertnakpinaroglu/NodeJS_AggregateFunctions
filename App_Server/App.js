@@ -40,13 +40,19 @@ var dbAccess = require("../DbAccess/DatabaseContext");
 require("../Route/RouteManager")(app);
 //#endregion
 
-tryModel.find({},(err,result)=> {
-    if (err) {
-        console.log("Hiçbir Data Bulunamadı");
+// tryModel.find({},(err,result)=> {
+//     if (err) {
+//         console.log("Hiçbir Data Bulunamadı");
 
+//     }
+//     console.log(result);
+//     console.log("####################################################");
+// });
+tryModel.findOne({"Title":"oylesine"},(err,res)=> {
+    if (err) {
+        console.log("İşlem Hatalı");
     }
-    console.log(result);
-    console.log("####################################################");
+    console.log(res);
 });
 
 
