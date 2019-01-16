@@ -63,13 +63,20 @@ require("../Route/RouteManager")(app);
 // console.log(res);
 // });
 
-tryModel.findByIdAndUpdate("5c3f380e44e9982b5cc41ffe",{Title:"guncellenen isim"},(err,res)=>{
+// tryModel.findByIdAndUpdate("5c3f380e44e9982b5cc41ffe",{Title:"guncellenen isim"},(err,res)=>{
+//     if (err) {
+//         console.log("Güncellenirken hata oluştu");
+//     }
+//     else {
+//         console.log("Güncelleme başarılı");
+//     }
+// });
+
+tryModel.findByIdAndRemove("5c3f380e44e9982b5cc41ffe", (err, res) => {
     if (err) {
-        console.log("Güncellenirken hata oluştu");
-    }
-    else {
-        console.log("Güncelleme başarılı");
-    }
+        console.log("İşlem Hatalı");
+    } else
+        console.log(res);
 });
 
 
