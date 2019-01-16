@@ -1,6 +1,7 @@
 var express = require("express");
 var app  = express();
 var path = require("path");
+var tryModel = require("../Models/TryModel");
 //#region COMMON TASK
                 // 1-) Enable Static Files
                 // 2-) Definition jade,pug file 
@@ -21,6 +22,20 @@ app.set("Views",path.join(__dirname,"../Views"));
 var dbAccess = require("../DbAccess/DatabaseContext");
 
 //#endregion
+
+//#region  4-) Model Creator
+var newTrymodel = new tryModel({
+    Title:"oylesine",
+    Name:"ertan"
+});
+newTrymodel.save(function (err,data) {  
+   if (err) {
+       console.log("Ekleme yapılırken hata oluştu");
+   } 
+   console.log("Ekleme işlemi bşarılı");
+});
+//#endregion
+
 
 app.listen(8000,()=>{
     console.log("Server is starting....");
