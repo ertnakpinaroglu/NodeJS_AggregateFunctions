@@ -1,3 +1,10 @@
 {
-    "name":"nodejs_mongoose_aggregate_functions"
+    "name": "nodejs_mongoose_aggregate_functions",
+    "version": "1.0.0",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "express": "^4.16.4",
+        "mongoose": "^5.4.4",
+        "pug": "^2.0.3"
+    }
 }
