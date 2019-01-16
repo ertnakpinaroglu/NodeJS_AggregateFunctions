@@ -48,12 +48,20 @@ require("../Route/RouteManager")(app);
 //     console.log(result);
 //     console.log("####################################################");
 // });
-tryModel.findOne({"Title":"oylesine"},(err,res)=> {
-    if (err) {
-        console.log("İşlem Hatalı");
-    }
-    console.log(res);
+
+// tryModel.findOne({"Title":"oylesine"},(err,res)=> {
+//     if (err) {
+//         console.log("İşlem Hatalı");
+//     }
+//     console.log(res);
+// });
+tryModel.findById("5c3f380e44e9982b5cc41ffe",(err,res)=> {
+if (err) {
+    console.log("Hatalı işlem");
+}
+console.log(res);
 });
+
 
 
 app.listen(8000, () => {
