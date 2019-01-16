@@ -40,6 +40,16 @@ var dbAccess = require("../DbAccess/DatabaseContext");
 require("../Route/RouteManager")(app);
 //#endregion
 
+tryModel.find({},(err,result)=> {
+    if (err) {
+        console.log("Hiçbir Data Bulunamadı");
+
+    }
+    console.log(result);
+    console.log("####################################################");
+});
+
+
 app.listen(8000, () => {
     console.log("Server is starting....");
 });
